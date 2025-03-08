@@ -3,3 +3,5 @@ bin
 .vs
 *.csproject.user
 appsettings.json
+*.pdf
+*.csproj.user
