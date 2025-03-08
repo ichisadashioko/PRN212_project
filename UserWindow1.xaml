@@ -37,8 +37,14 @@
         <ComboBox Name="cb_role" Grid.Column="1" Grid.Row="4" />
 
 
-        <Label Grid.Column="0" Grid.Row="6" Content="Address"/>
-        <TextBox Grid.Column="1" Grid.Row="6" Name="tb_Address"/>
+        <Label Grid.Column="0" Grid.Row="5" Content="Address"/>
+        <TextBox Grid.Column="1" Grid.Row="5" Name="tb_Address"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2">
+            <Button Content="Add" Name="btn_user_add" Margin="10" Padding="10" Click="btn_user_add_Click"/>
+            <Button Content="Edit" Name="btn_user_edit" Margin="10" Padding="10" Click="btn_user_edit_Click"/>
+            <Button Content="Delete" Name="btn_user_delete" Margin="10" Padding="10" Click="btn_user_delete_Click"/>
+        </StackPanel>
 
         <DataGrid Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" SelectionChanged="datagrid_users_SelectionChanged"  AutoGenerateColumns="False" IsReadOnly="True" Name="datagrid_users" SelectionMode="Single" >
             <DataGrid.Columns>

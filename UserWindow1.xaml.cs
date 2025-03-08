@@ -72,5 +72,20 @@ namespace PRN212_project
                 }
             }
         }
+
+        private void btn_user_add_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_user_edit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_user_delete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
