@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -86,6 +86,30 @@ namespace PRN212_project
         private void btn_user_delete_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        public bool is_search_match(User user, string search_str)
+        {
+            if (user.FullName.Contains(search_str, StringComparison.OrdinalIgnoreCase)) { return true; }
+            if (user.UserId.ToString().Contains(search_str, StringComparison.OrdinalIgnoreCase)) { return true; }
+            if (user.Email.Contains(search_str, StringComparison.OrdinalIgnoreCase)) { return true; }
+            if (user.Role.Contains(search_str, StringComparison.OrdinalIgnoreCase)) { return true; }
+            if (user.Address.Contains(search_str, StringComparison.OrdinalIgnoreCase)) { return true; }
+
+            return false;
+        }
+
+        private void btn_search_Click(object sender, RoutedEventArgs e)
+        {
+            string search_str = tb_search.Text;
+            if (string.IsNullOrWhiteSpace(search_str))
+            {
+                load_datagrid_users();
+                return;
+            }
+
+            var ctx = new Prn212ProjectContext();
+            datagrid_users.ItemsSource = ctx.Users.ToList().Where(user => is_search_match(user, search_str)).ToList();
         }
     }
 }
