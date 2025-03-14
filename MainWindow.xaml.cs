@@ -20,4 +20,10 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
     }
+
+    private void btn_2_1_window_Click(object sender, RoutedEventArgs e)
+    {
+        var window = new UserWindow2();
+        window.Show();
+    }
 }

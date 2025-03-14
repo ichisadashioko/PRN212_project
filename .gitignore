@@ -5,3 +5,4 @@ bin
 appsettings.json
 *.pdf
 *.csproj.user
+*.zip
