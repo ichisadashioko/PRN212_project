@@ -1,6 +1,6 @@
 ## 2. Tính năng chính
 ### 2.1. Quản lý thông tin cư dân
-- [ ] Thêm, cập nhật và xóa thông tin cư dân.
+- [x] Thêm, cập nhật và xóa thông tin cư dân.
 - [x] Tìm kiếm cư dân theo mã định danh hoặc thông tin cá nhân.
 - [ ] Quản lý danh sách cư dân thường trú, tạm trú, và lưu trú.
 ### 2.2. Quản lý đăng ký trực tuyến
@@ -15,14 +15,14 @@
 - [ ] Chuyển hộ khẩu:
     - [ ] Người dân gửi yêu cầu chuyển hộ khẩu trực tuyến.
     - [ ] Hỗ trợ chuyển hộ khẩu từ khu phố này sang khu phố khác.
-    - [ ] Công an khu vực nơi đi xác nhận và chuyển dữ liệu đến công an nơi 
+    - [ ] Công an khu vực nơi đi xác nhận và chuyển dữ liệu đến công an nơi
 đến.
 - [ ] Tách hộ khẩu:
     - [ ] Người dân đăng ký tách hộ khẩu trực tuyến, kèm các tài liệu yêu cầu.
     - [ ] Tổ trưởng khu phố và công an xác nhận thông tin.
     - [ ] Tạo hộ khẩu mới và cập nhật dữ liệu cư dân.
 ### 2.5. Thông báo và giao tiếp
-- [ ] Gửi thông báo về trạng thái hồ sơ đến người dân qua email hoặc trên ứng 
+- [ ] Gửi thông báo về trạng thái hồ sơ đến người dân qua email hoặc trên ứng
 dụng.
 - [ ] Hỗ trợ giao tiếp giữa người dân, tổ trưởng khu phố và công an.
 ### 2.6. Báo cáo và thống kê
@@ -35,7 +35,7 @@ dụng.
 - [ ] Theo dõi trạng thái hồ sơ.
 - [ ] Nhận thông báo và cập nhật thông tin cá nhân.
 ### 3.2. Tổ trưởng khu phố
-- [ ] Duyệt hồ sơ đăng ký, chuyển hộ khẩu, và tách hộ khẩu của cư dân trong khu 
+- [ ] Duyệt hồ sơ đăng ký, chuyển hộ khẩu, và tách hộ khẩu của cư dân trong khu
 vực quản lý.
 - [ ] Gửi ý kiến/nhận xét cho công an khu vực.
 ### 3.3. Công an khu vực

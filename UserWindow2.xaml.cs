@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -43,6 +45,35 @@ namespace PRN212_project
             datagrid_users.ItemsSource = ctx.Users.ToList();
         }
 
+        public string password_to_sha1(string input_str)
+        {
+            byte[] sha1_bs = SHA1.HashData(Encoding.UTF8.GetBytes(input_str));
+            return BitConverter.ToString(sha1_bs).Replace("-", string.Empty);
+        }
+
+        public bool is_sha1_hash(string input_str)
+        {
+            return Regex.IsMatch(input_str, @"\A[a-fA-F0-9]{40}\z");
+        }
+
+        public User popupate_user_from_ui()
+        {
+            var retval = new User();
+            retval.UserId = int.Parse(tb_userid.Text);
+            retval.FullName = tb_fullname.Text;
+            retval.Address = tb_Address.Text;
+            retval.Email = tb_Email.Text;
+            retval.Password = tb_Password.Text;
+            if (!is_sha1_hash(retval.Password))
+            {
+                retval.Password = password_to_sha1(retval.Password);
+            }
+
+            retval.Role = cb_role.SelectedItem as string;
+
+            return retval;
+        }
+
         private void datagrid_users_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             User user = datagrid_users.SelectedItem as User;
@@ -75,17 +106,30 @@ namespace PRN212_project
 
         private void btn_user_add_Click(object sender, RoutedEventArgs e)
         {
-
+            var user = popupate_user_from_ui();
+            user.UserId = 0;
+            var ctx = new Prn212ProjectContext();
+            ctx.Users.Add(user);
+            ctx.SaveChanges();
+            load_datagrid_users();
         }
 
         private void btn_user_edit_Click(object sender, RoutedEventArgs e)
         {
-
+            var user = popupate_user_from_ui();
+            var ctx = new Prn212ProjectContext();
+            ctx.Users.Update(user);
+            ctx.SaveChanges();
+            load_datagrid_users();
         }
 
         private void btn_user_delete_Click(object sender, RoutedEventArgs e)
         {
-
+            var user = popupate_user_from_ui();
+            var ctx = new Prn212ProjectContext();
+            ctx.Users.Remove(user);
+            ctx.SaveChanges();
+            load_datagrid_users();
         }
 
         public bool is_search_match(User user, string search_str)
