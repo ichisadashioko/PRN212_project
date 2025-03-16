@@ -26,4 +26,10 @@ public partial class MainWindow : Window
         var window = new UserWindow2();
         window.Show();
     }
+
+    private void RegistrationsWindow1_btn_Click(object sender, RoutedEventArgs e)
+    {
+        var window = new RegistrationsWindow1();
+        window.Show();
+    }
 }

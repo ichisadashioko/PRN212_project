@@ -15,15 +15,13 @@
 - [ ] Chuyển hộ khẩu:
     - [ ] Người dân gửi yêu cầu chuyển hộ khẩu trực tuyến.
     - [ ] Hỗ trợ chuyển hộ khẩu từ khu phố này sang khu phố khác.
-    - [ ] Công an khu vực nơi đi xác nhận và chuyển dữ liệu đến công an nơi
-đến.
+    - [ ] Công an khu vực nơi đi xác nhận và chuyển dữ liệu đến công an nơi đến.
 - [ ] Tách hộ khẩu:
     - [ ] Người dân đăng ký tách hộ khẩu trực tuyến, kèm các tài liệu yêu cầu.
     - [ ] Tổ trưởng khu phố và công an xác nhận thông tin.
     - [ ] Tạo hộ khẩu mới và cập nhật dữ liệu cư dân.
 ### 2.5. Thông báo và giao tiếp
-- [ ] Gửi thông báo về trạng thái hồ sơ đến người dân qua email hoặc trên ứng
-dụng.
+- [ ] Gửi thông báo về trạng thái hồ sơ đến người dân qua email hoặc trên ứng dụng.
 - [ ] Hỗ trợ giao tiếp giữa người dân, tổ trưởng khu phố và công an.
 ### 2.6. Báo cáo và thống kê
 - [ ] Tạo báo cáo về số lượng cư dân thường trú, tạm trú, lưu trú theo thời gian.
@@ -35,8 +33,7 @@ dụng.
 - [ ] Theo dõi trạng thái hồ sơ.
 - [ ] Nhận thông báo và cập nhật thông tin cá nhân.
 ### 3.2. Tổ trưởng khu phố
-- [ ] Duyệt hồ sơ đăng ký, chuyển hộ khẩu, và tách hộ khẩu của cư dân trong khu
-vực quản lý.
+- [ ] Duyệt hồ sơ đăng ký, chuyển hộ khẩu, và tách hộ khẩu của cư dân trong khu vực quản lý.
 - [ ] Gửi ý kiến/nhận xét cho công an khu vực.
 ### 3.3. Công an khu vực
 - [ ] Phê duyệt hồ sơ sau khi kiểm tra thông tin.

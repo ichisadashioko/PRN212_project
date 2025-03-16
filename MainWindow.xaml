@@ -15,6 +15,7 @@
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0">
             <Button Click="btn_2_1_window_Click" Name="btn_2_1_window" Content="2.1 Quan ly thong tin cu dan"/>
+            <Button Name="RegistrationsWindow1_btn" Content="RegistrationsWindow1" Click="RegistrationsWindow1_btn_Click"/>
         </StackPanel>
     </Grid>
 </Window>
