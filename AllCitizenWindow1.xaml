@@ -1,0 +1,27 @@
+﻿<Window x:Class="PRN212_project.AllCitizenWindow1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PRN212_project"
+        mc:Ignorable="d"
+        Title="AllCitizenWindow1" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Button Content="View notifications" Name="view_notification_btn" Click="view_notification_btn_Click"/>
+            <Button Content="View household info"/>
+            <Button Content="View my info" Name="view_info_btn" Click="view_info_btn_Click"/>
+            <Button Content="View registration info list" Name="registrations_btn_view" Click="registrations_btn_view_Click"/>
+            <Button Content="empty"/>
+            <Button Content="empty"/>
+            <Button Content="Police/AreaLeader"/>
+            <Button Content="View all registration info list - EDIT"/>
+            <Button Content="empty"/>
+            <Button Content="Police only"/>
+
+            <Button Content="create/edit/delete users"/>
+            <Button Content="View/create/edit households"/>
+            <Button Content="View action logs"/>
+        </StackPanel>
+    </Grid>
+</Window>

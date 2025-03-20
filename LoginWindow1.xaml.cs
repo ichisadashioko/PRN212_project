@@ -32,7 +32,8 @@ namespace PRN212_project
             if (!Utils.is_sha1_hash(password))
             {
                 //password = Utils.password_to_sha1(password).ToLower();
-                password = Utils.password_to_sha1(password).ToLower();
+                password = Utils.password_to_sha1(password);
+
             }
 
 
@@ -54,7 +55,11 @@ namespace PRN212_project
             }
             else
             {
-                MessageBox.Show($"welcome {login_user}");
+                var window = new AllCitizenWindow1();
+                window.CurrentUser = login_user;
+                window.Show();
+                //MessageBox.Show($"welcome {login_user}");
+
                 // TODO
 
             }

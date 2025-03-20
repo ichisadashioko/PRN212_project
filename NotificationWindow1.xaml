@@ -1,0 +1,22 @@
+﻿<Window x:Class="PRN212_project.NotificationWindow1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PRN212_project"
+        mc:Ignorable="d"
+        Title="NotificationWindow1" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <Button Content="reload" Name="reload" Click="reload_Click" />
+            <DataGrid Name="datagrid_notification" AutoGenerateColumns="False" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="NotificationID" Width="*" Binding="{Binding NotificationId}"/>
+                    <DataGridTextColumn Header="Message" Width="*" Binding="{Binding Message}"/>
+                    <DataGridTextColumn Header="Send Date" Width="*" Binding="{Binding SentDate}"/>
+                    <DataGridTextColumn Header="IsRead" Width="*" Binding="{Binding IsRead}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>
