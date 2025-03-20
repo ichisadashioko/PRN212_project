@@ -7,7 +7,40 @@
         mc:Ignorable="d"
         Title="RegistrationsWindow1" Height="450" Width="800">
     <Grid>
-        <DataGrid Name="dg_main">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0">
+            <Label Content="RegistrationId"/>
+            <TextBox Name="tb_RegistrationId"/>
+
+            <Label Content="UserId"/>
+            <TextBox Name="tb_UserId"/>
+
+            <Label Content="RegistrationType"/>
+            <TextBox Name="tb_RegistrationType"/>
+
+            <Label Content="StartDate"/>
+            <DatePicker Name="dp_startdate"/>
+
+            <Label Content="EndDate"/>
+            <DatePicker Name="dp_EndDate"/>
+
+            <Label Content="Status"/>
+            <TextBox Name="tb_Status"/>
+
+            <Label Content="ApprovedBy"/>
+            <TextBox Name="tb_ApprovedBy"/>
+
+            <Label Content="Comments"/>
+            <TextBox Name="tb_Comments"/>
+        </StackPanel>
+        <DataGrid Grid.Column="0" Grid.Row="1" IsReadOnly="True" SelectionMode="Single" Name="dg_main">
 
         </DataGrid>
     </Grid>

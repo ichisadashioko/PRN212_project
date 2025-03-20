@@ -32,4 +32,11 @@ public partial class MainWindow : Window
         var window = new RegistrationsWindow1();
         window.Show();
     }
+
+    private void login_window_Click(object sender, RoutedEventArgs e)
+    {
+
+        var window = new LoginWindow1();
+        window.Show();
+    }
 }

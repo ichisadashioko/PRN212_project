@@ -45,17 +45,6 @@ namespace PRN212_project
             datagrid_users.ItemsSource = ctx.Users.ToList();
         }
 
-        public string password_to_sha1(string input_str)
-        {
-            byte[] sha1_bs = SHA1.HashData(Encoding.UTF8.GetBytes(input_str));
-            return BitConverter.ToString(sha1_bs).Replace("-", string.Empty);
-        }
-
-        public bool is_sha1_hash(string input_str)
-        {
-            return Regex.IsMatch(input_str, @"\A[a-fA-F0-9]{40}\z");
-        }
-
         public User popupate_user_from_ui()
         {
             var retval = new User();
@@ -64,9 +53,9 @@ namespace PRN212_project
             retval.Address = tb_Address.Text;
             retval.Email = tb_Email.Text;
             retval.Password = tb_Password.Text;
-            if (!is_sha1_hash(retval.Password))
+            if (!Utils.is_sha1_hash(retval.Password))
             {
-                retval.Password = password_to_sha1(retval.Password);
+                retval.Password = Utils.password_to_sha1(retval.Password);
             }
 
             retval.Role = cb_role.SelectedItem as string;
