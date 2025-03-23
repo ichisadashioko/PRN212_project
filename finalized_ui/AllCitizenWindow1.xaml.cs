@@ -25,6 +25,7 @@ namespace PRN212_project
             InitializeComponent();
             CurrentUser = user;
             disable_feature_base_on_current_user_role();
+            Title = $"{CurrentUser}";
         }
 
         public User CurrentUser { get; set; }

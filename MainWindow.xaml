@@ -20,6 +20,9 @@
 
             <Button Name="all_logs_window" Content="all_logs_window" Click="all_logs_window_Click"/>
             <Button Content="test_UserRegistrationsWindow1" Name="test_UserRegistrationsWindow1" Click="test_UserRegistrationsWindow1_Click"/>
+            <Button Content="test_AllCitizenWindow1_Police" Name="test_AllCitizenWindow1_Police" Click="test_AllCitizenWindow1_Police_Click"/>
+            <Button Content="test_AllCitizenWindow1_AreaLeader" Name="test_AllCitizenWindow1_AreaLeader" Click="test_AllCitizenWindow1_AreaLeader_Click"/>
+            <Button Content="test_AllCitizenWindow1_Citizen" Name="test_AllCitizenWindow1_Citizen" Click="test_AllCitizenWindow1_Citizen_Click"/>
             <Label Content="main features"/>
             <Button Name="login_window" Content="LoginWindow1" Click="login_window_Click"/>
         </StackPanel>

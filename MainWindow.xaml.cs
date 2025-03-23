@@ -55,4 +55,31 @@ public partial class MainWindow : Window
         var window = new UserRegistrationsWindow1(user);
         window.Show();
     }
+
+    private void test_AllCitizenWindow1_Police_Click(object sender, RoutedEventArgs e)
+    {
+        var ctx = new Prn212ProjectContext();
+        var user = ctx.Users.ToList().Where(u => u.Role == "Police").FirstOrDefault();
+
+        var window = new AllCitizenWindow1(user);
+        window.Show();
+    }
+
+    private void test_AllCitizenWindow1_AreaLeader_Click(object sender, RoutedEventArgs e)
+    {
+        var ctx = new Prn212ProjectContext();
+        var user = ctx.Users.ToList().Where(u => u.Role == "AreaLeader").FirstOrDefault();
+
+        var window = new AllCitizenWindow1(user);
+        window.Show();
+    }
+
+    private void test_AllCitizenWindow1_Citizen_Click(object sender, RoutedEventArgs e)
+    {
+        var ctx = new Prn212ProjectContext();
+        var user = ctx.Users.ToList().Where(u => u.Role == "Citizen").FirstOrDefault();
+
+        var window = new AllCitizenWindow1(user);
+        window.Show();
+    }
 }
