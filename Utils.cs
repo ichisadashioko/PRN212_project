@@ -23,6 +23,6 @@ public partial class User
 {
     public override string ToString()
     {
-        return $"User: {UserId} - {FullName}";
+        return $"User: {UserId} - {FullName} - Role: {Role}";
     }
 }
