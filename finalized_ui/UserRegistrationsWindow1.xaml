@@ -18,13 +18,13 @@
 
         <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0">
             <Label Content="RegistrationId"/>
-            <TextBox Name="tb_RegistrationId"/>
+            <TextBox Name="tb_RegistrationId" IsReadOnly="True" />
 
             <Label Content="UserId"/>
-            <TextBox Name="tb_UserId"/>
+            <TextBox Name="tb_UserId" IsReadOnly="True" />
 
             <Label Content="RegistrationType"/>
-            <TextBox Name="tb_RegistrationType"/>
+            <ComboBox Name="cb_registration_type"/>
 
             <Label Content="StartDate"/>
             <DatePicker Name="dp_startdate"/>
@@ -33,17 +33,20 @@
             <DatePicker Name="dp_EndDate"/>
 
             <Label Content="Status"/>
-            <TextBox Name="tb_Status"/>
+            <ComboBox Name="cb_registration_status" IsReadOnly="True" IsEditable="False" IsEnabled="False" />
 
             <Label Content="ApprovedBy"/>
-            <TextBox Name="tb_ApprovedBy"/>
+            <TextBox Name="tb_ApprovedBy" IsReadOnly="True" />
 
             <Label Content="Comments"/>
-            <TextBox Name="tb_Comments"/>
+            <TextBox Name="tb_Comments" IsReadOnly="True"/>
 
-            <Button Content="reload" Click="reload_Click"/>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Add" Name="btn_add" Click="btn_add_Click"/>
+                <Button Content="reload" Click="reload_Click"/>
+            </StackPanel>
         </StackPanel>
-        <DataGrid Grid.Column="0" Grid.Row="1" IsReadOnly="True" SelectionMode="Single" Name="dg_main">
+        <DataGrid Grid.Column="0" Grid.Row="1" IsReadOnly="True" SelectionMode="Single" Name="dg_main" SelectionChanged="dg_main_SelectionChanged" >
 
         </DataGrid>
     </Grid>

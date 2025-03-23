@@ -56,7 +56,7 @@ namespace PRN212_project
 
         private void registrations_btn_view_Click(object sender, RoutedEventArgs e)
         {
-            var window = new UserRegistrationsWindow1();
+            var window = new UserRegistrationsWindow1(CurrentUser);
             window.CurrentUser = CurrentUser;
             window.Show();
 

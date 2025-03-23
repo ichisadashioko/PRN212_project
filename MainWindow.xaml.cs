@@ -46,4 +46,13 @@ public partial class MainWindow : Window
         window.Show();
 
     }
+
+    private void test_UserRegistrationsWindow1_Click(object sender, RoutedEventArgs e)
+    {
+        var ctx = new Prn212ProjectContext();
+        var user = ctx.Users.ToList().FirstOrDefault();
+
+        var window = new UserRegistrationsWindow1(user);
+        window.Show();
+    }
 }
