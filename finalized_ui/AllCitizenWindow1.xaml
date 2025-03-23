@@ -11,17 +11,19 @@
             <Button Content="View notifications" Name="view_notification_btn" Click="view_notification_btn_Click"/>
             <Button Content="View household info"/>
             <Button Content="View my info" Name="view_info_btn" Click="view_info_btn_Click"/>
-            <Button Content="View registration info list" Name="registrations_btn_view" Click="registrations_btn_view_Click"/>
-            <Button Content="empty"/>
-            <Button Content="empty"/>
-            <Button Content="Police/AreaLeader"/>
-            <Button Content="View all registration info list - EDIT"/>
-            <Button Content="empty"/>
-            <Button Content="Police only"/>
+            <Button Content="View my registration info list" Name="registrations_btn_view" Click="registrations_btn_view_Click"/>
 
-            <Button Content="create/edit/delete users"/>
-            <Button Content="View/create/edit households"/>
-            <Button Content="View action logs"/>
+            <StackPanel Name="stackpanel_arealeader_features" Orientation="Vertical">
+                <Label Content="Police/AreaLeader"/>
+                <Button Content="View all registration info list - EDIT"/>
+            </StackPanel>
+
+            <StackPanel Name="stackpanel_police_only_features" Orientation="Vertical">
+                <Label Content="Police only"/>
+                <Button Content="create/edit/delete users"/>
+                <Button Content="View/create/edit households"/>
+                <Button Content="View action logs"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>

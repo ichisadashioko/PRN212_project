@@ -55,7 +55,7 @@ namespace PRN212_project
             }
             else
             {
-                var window = new AllCitizenWindow1();
+                var window = new AllCitizenWindow1(login_user);
                 window.CurrentUser = login_user;
                 window.Show();
                 //MessageBox.Show($"welcome {login_user}");
