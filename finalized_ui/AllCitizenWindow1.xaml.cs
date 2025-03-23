@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PRN212_project.finalized_ui;
 
 namespace PRN212_project
 {
@@ -67,6 +68,13 @@ namespace PRN212_project
         {
             var window = new UserViewInfoWindow1();
             window.CurrentUser = CurrentUser;
+            window.Show();
+
+        }
+
+        private void btn_manage_registrations_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new ManageRegistrationsWindow1(CurrentUser);
             window.Show();
 
         }

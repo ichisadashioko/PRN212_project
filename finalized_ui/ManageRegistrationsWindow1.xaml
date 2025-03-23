@@ -1,0 +1,52 @@
+﻿<Window x:Class="PRN212_project.finalized_ui.ManageRegistrationsWindow1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PRN212_project.finalized_ui"
+        mc:Ignorable="d"
+        Title="ManageRegistrationsWindow1" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0">
+            <Label Content="RegistrationId"/>
+            <TextBox Name="tb_RegistrationId" IsReadOnly="True" />
+
+            <Label Content="UserId"/>
+            <TextBox Name="tb_UserId" IsReadOnly="True" />
+
+            <Label Content="RegistrationType"/>
+            <ComboBox Name="cb_registration_type" IsEnabled="False" />
+
+            <Label Content="StartDate"/>
+            <DatePicker Name="dp_startdate" IsEnabled="False" />
+
+            <Label Content="EndDate"/>
+            <DatePicker Name="dp_EndDate" IsEnabled="False" />
+
+            <Label Content="Status"/>
+            <ComboBox Name="cb_registration_status" />
+
+            <Label Content="ApprovedBy"/>
+            <TextBox Name="tb_ApprovedBy" IsReadOnly="True" />
+
+            <Label Content="Comments"/>
+            <TextBox Name="tb_Comments"/>
+
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Edit" Name="btn_edit" Click="btn_edit_Click"/>
+                <Button Content="reload" Name="btn_reload" Click="btn_reload_Click"/>
+            </StackPanel>
+        </StackPanel>
+        <DataGrid Grid.Column="0" Grid.Row="1" IsReadOnly="True" SelectionMode="Single" Name="dg_main" SelectionChanged="dg_main_SelectionChanged" >
+
+        </DataGrid>
+    </Grid>
+</Window>
