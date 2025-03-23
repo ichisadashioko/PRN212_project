@@ -12,14 +12,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace PRN212_project.show_all_ui
+namespace PRN212_project
 {
     /// <summary>
-    /// Interaction logic for AllNotificationWindow1.xaml
+    /// Interaction logic for UserRegistrationsWindow1.xaml
     /// </summary>
-    public partial class AllNotificationWindow1 : Window
+    public partial class UserRegistrationsWindow1 : Window
     {
-        public AllNotificationWindow1()
+        public User CurrentUser { get; set; }
+        public UserRegistrationsWindow1()
         {
             InitializeComponent();
             load_dg();
@@ -27,9 +28,17 @@ namespace PRN212_project.show_all_ui
 
         public void load_dg()
         {
+            if (CurrentUser==null)
+            {
+                return;
+            }
             var ctx = new Prn212ProjectContext();
-            var tmp_list = ctx.Notifications.ToList();
-            dg_main.ItemsSource = tmp_list;
+            dg_main.ItemsSource = ctx.Registrations.Where(i => i.UserId == CurrentUser.UserId).ToList();
+        }
+
+        private void reload_Click(object sender, RoutedEventArgs e)
+        {
+            load_dg();
         }
     }
 }

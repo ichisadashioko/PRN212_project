@@ -1,7 +1,7 @@
--- drop database PRN212_project;
-create database PRN212_project;
+-- drop database PRN212_Project_New;
+create database PRN212_Project_New;
 go
-use PRN212_project;
+use PRN212_Project_New;
 go
 create table Users (
     UserID int identity(1, 1) primary key,

@@ -34,7 +34,7 @@ public partial class Prn212ProjectContext : DbContext
         builder.SetBasePath(Directory.GetCurrentDirectory());
         builder.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
         var configuration = builder.Build();
-        optionsBuilder.UseSqlServer(configuration.GetConnectionString("Default"));
+        optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

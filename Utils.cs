@@ -17,24 +17,12 @@ public class Utils
     {
         return Regex.IsMatch(input_str, @"\A[a-fA-F0-9]{40}\z");
     }
-
-
-    public static DateTime FromDateOnly(DateOnly dateonly)
-    {
-        return new DateTime(dateonly.Year, dateonly.Month, dateonly.Day);
-    }
-
-    public static DateOnly FromDateTime(DateTime datetime)
-    {
-        return new DateOnly(datetime.Year, datetime.Month, datetime.Day);
-    }
-
 }
 
 public partial class User
 {
     public override string ToString()
     {
-        return $"User: {UserId} - {FullName} - Role: {Role}";
+        return $"User: {UserId} - {FullName}";
     }
 }

@@ -12,7 +12,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using PRN212_project.finalized_ui;
 
 namespace PRN212_project
 {
@@ -26,7 +25,6 @@ namespace PRN212_project
             InitializeComponent();
             CurrentUser = user;
             disable_feature_base_on_current_user_role();
-            Title = $"{CurrentUser}";
         }
 
         public User CurrentUser { get; set; }
@@ -58,7 +56,7 @@ namespace PRN212_project
 
         private void registrations_btn_view_Click(object sender, RoutedEventArgs e)
         {
-            var window = new UserRegistrationsWindow1(CurrentUser);
+            var window = new UserRegistrationsWindow1();
             window.CurrentUser = CurrentUser;
             window.Show();
 
@@ -68,13 +66,6 @@ namespace PRN212_project
         {
             var window = new UserViewInfoWindow1();
             window.CurrentUser = CurrentUser;
-            window.Show();
-
-        }
-
-        private void btn_manage_registrations_Click(object sender, RoutedEventArgs e)
-        {
-            var window = new ManageRegistrationsWindow1(CurrentUser);
             window.Show();
 
         }

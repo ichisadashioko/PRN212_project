@@ -8,7 +8,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PRN212_project.show_all_ui;
 
 namespace PRN212_project;
 
@@ -24,7 +23,7 @@ public partial class MainWindow : Window
 
     private void btn_2_1_window_Click(object sender, RoutedEventArgs e)
     {
-        var window = new UserWindow2();
+        var window = new UserWindow1();
         window.Show();
     }
 
@@ -36,7 +35,6 @@ public partial class MainWindow : Window
 
     private void login_window_Click(object sender, RoutedEventArgs e)
     {
-
         var window = new LoginWindow1();
         window.Show();
     }
@@ -45,49 +43,5 @@ public partial class MainWindow : Window
     {
         var window = new AllLogsWindow1();
         window.Show();
-
-    }
-
-    private void test_UserRegistrationsWindow1_Click(object sender, RoutedEventArgs e)
-    {
-        var ctx = new Prn212ProjectContext();
-        var user = ctx.Users.ToList().FirstOrDefault();
-
-        var window = new UserRegistrationsWindow1(user);
-        window.Show();
-    }
-
-    private void test_AllCitizenWindow1_Police_Click(object sender, RoutedEventArgs e)
-    {
-        var ctx = new Prn212ProjectContext();
-        var user = ctx.Users.ToList().Where(u => u.Role == "Police").FirstOrDefault();
-
-        var window = new AllCitizenWindow1(user);
-        window.Show();
-    }
-
-    private void test_AllCitizenWindow1_AreaLeader_Click(object sender, RoutedEventArgs e)
-    {
-        var ctx = new Prn212ProjectContext();
-        var user = ctx.Users.ToList().Where(u => u.Role == "AreaLeader").FirstOrDefault();
-
-        var window = new AllCitizenWindow1(user);
-        window.Show();
-    }
-
-    private void test_AllCitizenWindow1_Citizen_Click(object sender, RoutedEventArgs e)
-    {
-        var ctx = new Prn212ProjectContext();
-        var user = ctx.Users.ToList().Where(u => u.Role == "Citizen").FirstOrDefault();
-
-        var window = new AllCitizenWindow1(user);
-        window.Show();
-    }
-
-    private void test_AllNotificationWindow1_Click(object sender, RoutedEventArgs e)
-    {
-        var window = new AllNotificationWindow1();
-        window.Show();
-
     }
 }

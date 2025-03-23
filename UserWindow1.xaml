@@ -5,56 +5,136 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PRN212_project"
         mc:Ignorable="d"
-        Title="UserWindow1" Height="450" Width="800">
-    <Grid>
-
+        Title="Quản lý thông tin cư dân" Height="700" Width="1000"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource BackgroundColor}">
+    <Grid Margin="20">
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
 
-        <Label Grid.Column="0" Grid.Row="0" Content="UserID"/>
-        <TextBox Grid.Column="1" Grid.Row="0" Name="tb_userid"/>
-        <Label Grid.Column="0" Grid.Row="1" Content="FullName"/>
-        <TextBox Grid.Column="1" Grid.Row="1" Name="tb_fullname"/>
+        <!-- Header -->
+        <TextBlock Grid.Row="0" 
+                   Text="QUẢN LÝ THÔNG TIN CƯ DÂN"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   Margin="0,0,0,20"
+                   HorizontalAlignment="Center"
+                   Foreground="{StaticResource PrimaryColor}"/>
 
-        <Label Grid.Column="0" Grid.Row="2" Content="Email"/>
-        <TextBox Grid.Column="1" Grid.Row="2" Name="tb_Email"/>
-        <Label Grid.Column="0" Grid.Row="3" Content="Password"/>
-        <TextBox Grid.Column="1" Grid.Row="3" Name="tb_Password"/>
+        <!-- Main Content -->
+        <Border Grid.Row="1" 
+                Background="White"
+                CornerRadius="8"
+                Padding="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="10" ShadowDepth="3" Opacity="0.3"/>
+            </Border.Effect>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-        <Label Grid.Column="0" Grid.Row="4" Content="Role"/>
-        <ComboBox Name="cb_role" Grid.Column="1" Grid.Row="4" />
+                <!-- Form Panel -->
+                <Border Grid.Column="0" 
+                        BorderBrush="#E0E0E0" 
+                        BorderThickness="0,0,1,0" 
+                        Padding="10,0,20,0">
+                    <StackPanel>
+                        <TextBlock Text="Thông tin cư dân"
+                                 FontSize="18"
+                                 FontWeight="Medium"
+                                 Margin="0,0,0,20"
+                                 Foreground="{StaticResource TextColor}"/>
 
+                        <Label Content="Mã cư dân"/>
+                        <TextBox Name="tb_userid" IsReadOnly="True"/>
 
-        <Label Grid.Column="0" Grid.Row="5" Content="Address"/>
-        <TextBox Grid.Column="1" Grid.Row="5" Name="tb_Address"/>
+                        <Label Content="Họ và tên"/>
+                        <TextBox Name="tb_fullname"/>
 
-        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2">
-            <Button Content="Add" Name="btn_user_add" Margin="10" Padding="10" Click="btn_user_add_Click"/>
-            <Button Content="Edit" Name="btn_user_edit" Margin="10" Padding="10" Click="btn_user_edit_Click"/>
-            <Button Content="Delete" Name="btn_user_delete" Margin="10" Padding="10" Click="btn_user_delete_Click"/>
-        </StackPanel>
+                        <Label Content="Email"/>
+                        <TextBox Name="tb_Email"/>
 
-        <DataGrid Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" SelectionChanged="datagrid_users_SelectionChanged"  AutoGenerateColumns="False" IsReadOnly="True" Name="datagrid_users" SelectionMode="Single" >
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="UserID" Width="*" Binding="{Binding UserId}"/>
-                <DataGridTextColumn Header="FullName" Width="*" Binding="{Binding FullName}"/>
-                <DataGridTextColumn Header="Email" Width="*" Binding="{Binding Email}"/>
-                <DataGridTextColumn Header="Password" Width="*" Binding="{Binding Password}"/>
-                <DataGridTextColumn Header="Role" Width="*" Binding="{Binding Role}"/>
-                <DataGridTextColumn Header="Address" Width="*" Binding="{Binding Address}"/>
-            </DataGrid.Columns>
-        </DataGrid>
+                        <Label Content="Mật khẩu"/>
+                        <PasswordBox Name="tb_Password" 
+                                   Padding="8,5"
+                                   Margin="5"/>
+
+                        <Label Content="Vai trò"/>
+                        <ComboBox Name="cb_role"/>
+
+                        <Label Content="Địa chỉ"/>
+                        <TextBox Name="tb_Address"
+                                TextWrapping="Wrap"
+                                AcceptsReturn="True"
+                                Height="60"/>
+
+                        <StackPanel Orientation="Horizontal" 
+                                  Margin="0,20,0,0"
+                                  HorizontalAlignment="Center">
+                            <Button Content="Thêm mới" 
+                                    Name="btn_user_add"
+                                    Click="btn_user_add_Click">
+                                <Button.Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                                        <Setter Property="Background" Value="#4CAF50"/>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                            <Button Content="Cập nhật" 
+                                    Name="btn_user_edit"
+                                    Click="btn_user_edit_Click">
+                                <Button.Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                                        <Setter Property="Background" Value="#FF9800"/>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                            <Button Content="Xóa" 
+                                    Name="btn_user_delete"
+                                    Click="btn_user_delete_Click">
+                                <Button.Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                                        <Setter Property="Background" Value="#F44336"/>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <!-- DataGrid -->
+                <Grid Grid.Column="1" Margin="20,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Danh sách cư dân"
+                             FontSize="18"
+                             FontWeight="Medium"
+                             Margin="0,0,0,20"
+                             Foreground="{StaticResource TextColor}"/>
+
+                    <DataGrid Grid.Row="1"
+                             SelectionChanged="datagrid_users_SelectionChanged"
+                             AutoGenerateColumns="False"
+                             IsReadOnly="True"
+                             Name="datagrid_users"
+                             SelectionMode="Single">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Mã cư dân" Width="Auto" Binding="{Binding UserId}"/>
+                            <DataGridTextColumn Header="Họ và tên" Width="*" Binding="{Binding FullName}"/>
+                            <DataGridTextColumn Header="Email" Width="*" Binding="{Binding Email}"/>
+                            <DataGridTextColumn Header="Vai trò" Width="Auto" Binding="{Binding Role}"/>
+                            <DataGridTextColumn Header="Địa chỉ" Width="*" Binding="{Binding Address}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </Grid>
+        </Border>
     </Grid>
 </Window>

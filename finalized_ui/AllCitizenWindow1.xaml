@@ -15,7 +15,7 @@
 
             <StackPanel Name="stackpanel_arealeader_features" Orientation="Vertical">
                 <Label Content="Police/AreaLeader"/>
-                <Button Content="View all registration info list - EDIT" Name="btn_manage_registrations" Click="btn_manage_registrations_Click"/>
+                <Button Content="View all registration info list - EDIT"/>
             </StackPanel>
 
             <StackPanel Name="stackpanel_police_only_features" Orientation="Vertical">
