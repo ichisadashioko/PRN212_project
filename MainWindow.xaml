@@ -17,6 +17,7 @@
             <Button Click="btn_2_1_window_Click" Name="btn_2_1_window" Content="2.1 Quan ly thong tin cu dan"/>
             <Button Name="RegistrationsWindow1_btn" Content="RegistrationsWindow1" Click="RegistrationsWindow1_btn_Click"/>
             <Button Name="login_window" Content="LoginWindow1" Click="login_window_Click"/>
+            <Button Name="all_logs_window" Content="all_logs_window" Click="all_logs_window_Click"/>
         </StackPanel>
     </Grid>
 </Window>

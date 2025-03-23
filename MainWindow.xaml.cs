@@ -39,4 +39,11 @@ public partial class MainWindow : Window
         var window = new LoginWindow1();
         window.Show();
     }
+
+    private void all_logs_window_Click(object sender, RoutedEventArgs e)
+    {
+        var window = new AllLogsWindow1();
+        window.Show();
+
+    }
 }
