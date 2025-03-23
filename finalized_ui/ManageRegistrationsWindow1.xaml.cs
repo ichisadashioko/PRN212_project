@@ -41,14 +41,14 @@ namespace PRN212_project.finalized_ui
             int registration_id = Int32.Parse(tb_RegistrationId.Text);
 
             Registration registration_obj = ctx.Registrations.ToList().Where(r => r.RegistrationId == registration_id).FirstOrDefault();
-            if(registration_obj == null)
+            if (registration_obj == null)
             {
                 MessageBox.Show($"invalid registration id - {registration_id}");
                 return;
             }
 
             registration_obj.ApprovedBy = CurrentUser.UserId;
-            if(cb_registration_status.SelectedValue == null)
+            if (cb_registration_status.SelectedValue == null)
             {
                 MessageBox.Show($"invalid Status");
                 return;
@@ -63,6 +63,16 @@ namespace PRN212_project.finalized_ui
             load_dg();
             populate_ui(registration_obj);
 
+            string approve_user_name = ctx.Users.ToList().Where(u => u.UserId == CurrentUser.UserId).FirstOrDefault().FullName;
+
+
+            Notification notification_for_user = new Notification();
+            notification_for_user.UserId = registration_obj.UserId;
+            notification_for_user.Message = $"{approve_user_name} updated your '{registration_obj.RegistrationType}' registration to '{registration_obj.Status}'. Comment: '{registration_obj.Comments}'";
+            notification_for_user.SentDate = DateTime.Now;
+
+            ctx.Notifications.Add(notification_for_user);
+            ctx.SaveChanges();
         }
 
         private void btn_reload_Click(object sender, RoutedEventArgs e)
