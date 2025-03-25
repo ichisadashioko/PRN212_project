@@ -52,6 +52,11 @@ namespace PRN212_project
 
         private void view_notification_btn_Click(object sender, RoutedEventArgs e)
         {
+            if (CurrentUser == null)
+            {
+                MessageBox.Show("not an authenticated user");
+                return;
+            }
             var window = new NotificationWindow1();
             window.CurrentUser = CurrentUser;
             window.Show();
@@ -59,6 +64,11 @@ namespace PRN212_project
 
         private void registrations_btn_view_Click(object sender, RoutedEventArgs e)
         {
+            if (CurrentUser == null)
+            {
+                MessageBox.Show("not an authenticated user");
+                return;
+            }
             var window = new UserRegistrationsWindow1(CurrentUser);
             window.CurrentUser = CurrentUser;
             window.Show();
@@ -67,6 +77,11 @@ namespace PRN212_project
 
         private void view_info_btn_Click(object sender, RoutedEventArgs e)
         {
+            if (CurrentUser == null)
+            {
+                MessageBox.Show("not an authenticated user");
+                return;
+            }
             var window = new UserViewInfoWindow1();
             window.CurrentUser = CurrentUser;
             window.Show();
@@ -75,6 +90,11 @@ namespace PRN212_project
 
         private void btn_manage_registrations_Click(object sender, RoutedEventArgs e)
         {
+            if (CurrentUser == null)
+            {
+                MessageBox.Show("not an authenticated user");
+                return;
+            }
             var window = new ManageRegistrationsWindow1(CurrentUser);
             window.Show();
 
@@ -82,19 +102,47 @@ namespace PRN212_project
 
         private void view_logs_btn_Click(object sender, RoutedEventArgs e)
         {
+            if (CurrentUser == null)
+            {
+                MessageBox.Show("not an authenticated user");
+                return;
+            }
             var window = new AllLogsWindow1();
             window.Show();
         }
 
         private void btn_manage_households_Click(object sender, RoutedEventArgs e)
         {
+            if (CurrentUser == null)
+            {
+                MessageBox.Show("not an authenticated user");
+                return;
+            }
             var window = new PoliceManageAllHouseholds();
             window.Show();
         }
 
         private void btn_manage_users_Click(object sender, RoutedEventArgs e)
         {
+            if (CurrentUser == null)
+            {
+                MessageBox.Show("not an authenticated user");
+                return;
+            }
+
             var window = new PoliceManageAllUsersWindow();
+            window.Show();
+        }
+
+        private void btn_view_household_Click(object sender, RoutedEventArgs e)
+        {
+            if (CurrentUser == null)
+            {
+                MessageBox.Show("not an authenticated user");
+                return;
+            }
+
+            var window = new ViewOwnHouseholdInfoWindow1(CurrentUser);
             window.Show();
         }
     }

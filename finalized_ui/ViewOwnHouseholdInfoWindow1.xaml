@@ -8,6 +8,14 @@
         Title="ViewOwnHouseholdInfoWindow1" Height="450" Width="800">
     <Grid>
         <StackPanel Orientation="Vertical">
+            <Label Content="HouseholdId"/>
+            <TextBox Name="tb_HouseholdId" IsEnabled="False" IsReadOnly="True"/>
+            <Label Content="HeadOfHousehold"/>
+            <TextBox Name="tb_HeadOfHousehold" IsEnabled="False" IsReadOnly="True"/>
+            <Label Content="Address"/>
+            <TextBox Name="tb_Address" IsEnabled="False" IsReadOnly="True"/>
+            <Label Content="CreatedDate"/>
+            <DatePicker Name="dp_CreatedDate" IsEnabled="False"/>
             <DataGrid Name="dg_household_members" AutoGenerateColumns="False" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="MemberId" Width="*" Binding="{Binding MemberId}"/>

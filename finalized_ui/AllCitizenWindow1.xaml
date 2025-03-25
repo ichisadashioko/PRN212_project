@@ -9,7 +9,7 @@
     <Grid>
         <StackPanel Orientation="Vertical">
             <Button Content="View notifications" Name="view_notification_btn" Click="view_notification_btn_Click"/>
-            <Button Content="View household info"/>
+            <Button Content="View household info" Name="btn_view_household" Click="btn_view_household_Click"/>
             <Button Content="View my info" Name="view_info_btn" Click="view_info_btn_Click"/>
             <Button Content="View my registration info list" Name="registrations_btn_view" Click="registrations_btn_view_Click"/>
 
