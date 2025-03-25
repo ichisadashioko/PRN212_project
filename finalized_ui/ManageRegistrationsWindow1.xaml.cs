@@ -47,7 +47,6 @@ namespace PRN212_project.finalized_ui
                 return;
             }
 
-            registration_obj.ApprovedBy = CurrentUser.UserId;
             if (cb_registration_status.SelectedValue == null)
             {
                 MessageBox.Show($"invalid Status");
@@ -55,6 +54,11 @@ namespace PRN212_project.finalized_ui
             }
 
             registration_obj.Status = cb_registration_status.SelectedValue as string;
+            if(registration_obj.Status == "Approved")
+            {
+                registration_obj.ApprovedBy = CurrentUser.UserId;
+            }
+
             registration_obj.Comments = tb_Comments.Text;
 
             ctx.Registrations.Update(registration_obj);
@@ -72,6 +76,17 @@ namespace PRN212_project.finalized_ui
             notification_for_user.SentDate = DateTime.Now;
 
             ctx.Notifications.Add(notification_for_user);
+            ctx.SaveChanges();
+
+
+            Log log = new Log()
+            {
+                Action = $"{CurrentUser} updated Registration {registration_obj.RegistrationId} to {registration_obj.Status}",
+                Timestamp = DateTime.Now,
+                UserId = CurrentUser.UserId
+            };
+
+            ctx.Logs.Add(log);
             ctx.SaveChanges();
         }
 

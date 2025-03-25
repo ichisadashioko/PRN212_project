@@ -46,6 +46,15 @@ namespace PRN212_project
                 if (user.Email.Equals(username) && user.Password.Equals(password))
                 {
                     login_user = user;
+                    Log log = new Log()
+                    {
+                        Action = "Login",
+                        Timestamp = DateTime.Now,
+                        UserId = user.UserId
+                    };
+
+                    ctx.Logs.Add(log);
+                    ctx.SaveChanges();
                     break;
                 }
             }
