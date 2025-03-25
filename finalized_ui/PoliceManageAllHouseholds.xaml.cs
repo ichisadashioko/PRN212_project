@@ -40,9 +40,9 @@ namespace PRN212_project.finalized_ui
             var hm_id_list = household.HouseholdMembers.Select(hm => hm.UserId).ToList();
             var hm_user_list = ctx.Users.ToList().Where(u => hm_id_list.Contains(u.UserId)).ToList();
             cb_HeadOfHousehold.ItemsSource = hm_user_list;
-            foreach(var user in hm_user_list)
+            foreach (var user in hm_user_list)
             {
-                if(user.UserId == household.HeadOfHouseholdId)
+                if (user.UserId == household.HeadOfHouseholdId)
                 {
                     cb_HeadOfHousehold.SelectedItem = user;
                     break;
@@ -52,17 +52,76 @@ namespace PRN212_project.finalized_ui
 
         private void btn_add_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                Household household = from_ui();
+                household.HouseholdId = 0;
+                var ctx = new Prn212ProjectContext();
+                ctx.Households.Add(household);
+                ctx.SaveChanges();
+                MessageBox.Show("succesful");
+                load_dg();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("failed");
+            }
         }
 
         private void btn_edit_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                Household household = from_ui();
+                var ctx = new Prn212ProjectContext();
+                ctx.Households.Update(household);
+                ctx.SaveChanges();
+                MessageBox.Show("succesful");
+                load_dg();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("failed");
+            }
 
         }
 
         private void btn_delete_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                Household household = from_ui();
+                int household_id = household.HouseholdId;
+                var ctx = new Prn212ProjectContext();
 
+                var existing_hh = ctx.Households.Where(hh => hh.HouseholdId == household_id).FirstOrDefault();
+                if(existing_hh == null)
+                {
+                    MessageBox.Show("invalid household");
+                    return;
+                }
+
+                var hm_list = ctx.HouseholdMembers.Where(hm => hm.HouseholdId == household_id).ToList();
+                foreach(var hm in hm_list)
+                {
+                    ctx.HouseholdMembers.Remove(hm);
+                }
+
+                ctx.SaveChanges();
+
+                ctx.Households.Remove(household);
+                ctx.SaveChanges();
+
+                MessageBox.Show("succesful");
+                load_dg();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("failed");
+            }
         }
 
         private void btn_view_HouseholdMembers_Click(object sender, RoutedEventArgs e)
@@ -88,6 +147,29 @@ namespace PRN212_project.finalized_ui
 
             label_member_count.Content = selected_item.HouseholdMembers.Count;
             load_cb_head_of_household(selected_item);
+        }
+
+        public Household from_ui()
+        {
+            Household household = new Household();
+            int household_id;
+            if (Int32.TryParse(tb_HouseholdId.Text, out household_id))
+            {
+                household.HouseholdId = household_id;
+            }
+
+            household.Address = tb_Address.Text;
+            if (cb_HeadOfHousehold.SelectedItem != null)
+            {
+                household.HeadOfHouseholdId = (cb_HeadOfHousehold.SelectedItem as User).UserId;
+            }
+
+            if (dp_CreatedDate.SelectedDate != null)
+            {
+                household.CreatedDate = Utils.FromDateTime(dp_CreatedDate.SelectedDate.Value);
+            }
+
+            return household;
         }
     }
 }
