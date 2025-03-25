@@ -85,9 +85,17 @@ namespace PRN212_project
             var window = new AllHouseholdsWindow1();
             window.Show();
         }
-        //public AllCitizenWindow1(User user)
-        //{
-        //    CurrentUser = user;
-        //}
+
+        private void btn_manage_households_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new PoliceManageAllHouseholds();
+            window.Show();
+        }
+
+        private void btn_manage_users_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new UserWindow2();
+            window.Show();
+        }
     }
 }
