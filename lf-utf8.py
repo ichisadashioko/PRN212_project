@@ -96,6 +96,8 @@ IGNORED_DIRS = [
 ]
 
 IGNORED_EXTS = [
+    '.doc',
+    '.docx',
     '.bomb',
     '.map',
     # Microsoft Excel files

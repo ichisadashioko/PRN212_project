@@ -10,8 +10,8 @@
         <StackPanel Orientation="Vertical">
             <DataGrid Name="dg_household_members" AutoGenerateColumns="False" >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="MemberID" Width="*" Binding="{Binding MemberID}"/>
-                    <DataGridTextColumn Header="UserID" Width="*" Binding="{Binding UserID}"/>
+                    <DataGridTextColumn Header="MemberId" Width="*" Binding="{Binding MemberId}"/>
+                    <DataGridTextColumn Header="UserId" Width="*" Binding="{Binding UserId}"/>
                     <DataGridTextColumn Header="Name" Width="*" Binding="{Binding User.FullName}"/>
                     <DataGridTextColumn Header="Relationship" Width="*" Binding="{Binding Relationship}"/>
                 </DataGrid.Columns>

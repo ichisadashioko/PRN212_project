@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="AllHouseholdsWindow1" Height="450" Width="800">
     <Grid>
-
-        <DataGrid Grid.Column="0" Grid.Row="0" IsReadOnly="True" SelectionMode="Single" Name="dg_main">
-
-        </DataGrid>
+        <StackPanel Orientation="Vertical">
+            <DataGrid IsReadOnly="True" SelectionMode="Single" Name="dg_main">
+            </DataGrid>
+        </StackPanel>
     </Grid>
 </Window>

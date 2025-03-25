@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PRN212_project.finalized_ui;
 using PRN212_project.show_all_ui;
 
 namespace PRN212_project;
@@ -101,6 +102,12 @@ public partial class MainWindow : Window
     private void test_AllHouseholdMembersWindow1_Click(object sender, RoutedEventArgs e)
     {
         var window = new AllHouseholdMembersWindow1();
+        window.Show();
+    }
+
+    private void test_PoliceManageAllHouseholds_Click(object sender, RoutedEventArgs e)
+    {
+        var window = new PoliceManageAllHouseholds();
         window.Show();
     }
 }
