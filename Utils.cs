@@ -38,3 +38,11 @@ public partial class User
         return $"User: {UserId} - {FullName} - Role: {Role}";
     }
 }
+
+public partial class Household
+{
+    public override string ToString()
+    {
+        return $"Household: {HouseholdId} - {Address}";
+    }
+}

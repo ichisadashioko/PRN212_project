@@ -141,7 +141,10 @@ namespace PRN212_project.finalized_ui
 
         private void btn_view_HouseholdMembers_Click(object sender, RoutedEventArgs e)
         {
-
+            var selected_item = dg_main.SelectedItem as Household;
+            if (selected_item == null) { return; }
+            var window = new PoliceManageHouseholdMembersWindow(selected_item);
+            window.Show();
         }
 
         private void dg_main_SelectionChanged(object sender, SelectionChangedEventArgs e)
