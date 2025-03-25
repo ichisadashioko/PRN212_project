@@ -25,7 +25,7 @@ public partial class MainWindow : Window
 
     private void btn_2_1_window_Click(object sender, RoutedEventArgs e)
     {
-        var window = new UserWindow2();
+        var window = new PoliceManageAllUsersWindow();
         window.Show();
     }
 

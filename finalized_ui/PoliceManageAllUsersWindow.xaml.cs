@@ -19,9 +19,9 @@ namespace PRN212_project
     /// <summary>
     /// Interaction logic for UserWindow2.xaml
     /// </summary>
-    public partial class UserWindow2 : Window
+    public partial class PoliceManageAllUsersWindow : Window
     {
-        public UserWindow2()
+        public PoliceManageAllUsersWindow()
         {
             InitializeComponent();
             load_datagrid_users();

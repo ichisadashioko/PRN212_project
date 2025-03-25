@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.EntityFrameworkCore;
 
 namespace PRN212_project
 {
@@ -28,7 +29,7 @@ namespace PRN212_project
         public void load_dg()
         {
             var ctx = new Prn212ProjectContext();
-            var tmp_list = ctx.Logs.ToList();
+            var tmp_list = ctx.Logs.Include(log => log.User).ToList();
             dg_main.ItemsSource = tmp_list;
         }
     }

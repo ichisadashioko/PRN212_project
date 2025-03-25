@@ -82,7 +82,7 @@ namespace PRN212_project
 
         private void view_logs_btn_Click(object sender, RoutedEventArgs e)
         {
-            var window = new AllHouseholdsWindow1();
+            var window = new AllLogsWindow1();
             window.Show();
         }
 
@@ -94,7 +94,7 @@ namespace PRN212_project
 
         private void btn_manage_users_Click(object sender, RoutedEventArgs e)
         {
-            var window = new UserWindow2();
+            var window = new PoliceManageAllUsersWindow();
             window.Show();
         }
     }
