@@ -20,10 +20,12 @@ namespace PRN212_project
     public partial class UserViewInfoWindow1 : Window
     {
         public User CurrentUser { get; set; }
-        public UserViewInfoWindow1()
+        public UserViewInfoWindow1(User user)
         {
+            CurrentUser = user;
             InitializeComponent();
             load_cb_roles();
+            populate_data();
         }
 
 
@@ -96,10 +98,19 @@ namespace PRN212_project
 
             CurrentUser = ctx.Users.Where(u => u.UserId == CurrentUser.UserId).FirstOrDefault();
             populate_data();
+            MessageBox.Show("updated successful");
         }
 
         private void reload_Click(object sender, RoutedEventArgs e)
         {
+            if(CurrentUser == null)
+            {
+                MessageBox.Show("not an authenticated user");
+                return;
+            }
+
+            var ctx = new Prn212ProjectContext();
+            CurrentUser = ctx.Users.Where(u => u.UserId == CurrentUser.UserId).FirstOrDefault();
             populate_data();
         }
     }
