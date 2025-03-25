@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using PRN212_project.finalized_ui;
+using PRN212_project.show_all_ui;
 
 namespace PRN212_project
 {
@@ -77,6 +78,12 @@ namespace PRN212_project
             var window = new ManageRegistrationsWindow1(CurrentUser);
             window.Show();
 
+        }
+
+        private void view_logs_btn_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new AllHouseholdsWindow1();
+            window.Show();
         }
         //public AllCitizenWindow1(User user)
         //{

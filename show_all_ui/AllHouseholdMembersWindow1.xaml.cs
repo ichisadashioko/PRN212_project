@@ -11,16 +11,16 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.EntityFrameworkCore;
 
-namespace PRN212_project
+namespace PRN212_project.show_all_ui
 {
     /// <summary>
-    /// Interaction logic for NotificationWindow1.xaml
+    /// Interaction logic for AllHouseholdMembersWindow1.xaml
     /// </summary>
-    public partial class NotificationWindow1 : Window
+    public partial class AllHouseholdMembersWindow1 : Window
     {
-        public User CurrentUser { get; set; }
-        public NotificationWindow1()
+        public AllHouseholdMembersWindow1()
         {
             InitializeComponent();
             load_dg();
@@ -28,16 +28,9 @@ namespace PRN212_project
 
         public void load_dg()
         {
-            if(CurrentUser == null) { return; }
-
             var ctx = new Prn212ProjectContext();
-            var tmp_list = ctx.Notifications.Where(n => n.UserId == CurrentUser.UserId).ToList();
-            datagrid_notification.ItemsSource = tmp_list;
-        }
-
-        private void reload_Click(object sender, RoutedEventArgs e)
-        {
-            load_dg();
+            var tmp_list = ctx.HouseholdMembers.Include(hm => hm.User).ToList();
+            dg_household_members.ItemsSource = tmp_list;
         }
     }
 }

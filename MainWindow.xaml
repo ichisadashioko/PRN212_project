@@ -24,6 +24,8 @@
             <Button Content="test_AllCitizenWindow1_AreaLeader" Name="test_AllCitizenWindow1_AreaLeader" Click="test_AllCitizenWindow1_AreaLeader_Click"/>
             <Button Content="test_AllCitizenWindow1_Citizen" Name="test_AllCitizenWindow1_Citizen" Click="test_AllCitizenWindow1_Citizen_Click"/>
             <Button Content="test_AllNotificationWindow1" Name="test_AllNotificationWindow1" Click="test_AllNotificationWindow1_Click"/>
+            <Button Content="test_AllHouseholdsWindow1" Name="test_AllHouseholdsWindow1" Click="test_AllHouseholdsWindow1_Click"/>
+            <Button Content="test_AllHouseholdMembersWindow1" Name="test_AllHouseholdMembersWindow1" Click="test_AllHouseholdMembersWindow1_Click"/>
             <Label Content="main features"/>
             <Button Name="login_window" Content="LoginWindow1" Click="login_window_Click"/>
         </StackPanel>

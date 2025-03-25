@@ -90,4 +90,17 @@ public partial class MainWindow : Window
         window.Show();
 
     }
+
+    private void test_AllHouseholdsWindow1_Click(object sender, RoutedEventArgs e)
+    {
+        var window = new AllHouseholdsWindow1();
+        window.Show();
+
+    }
+
+    private void test_AllHouseholdMembersWindow1_Click(object sender, RoutedEventArgs e)
+    {
+        var window = new AllHouseholdMembersWindow1();
+        window.Show();
+    }
 }

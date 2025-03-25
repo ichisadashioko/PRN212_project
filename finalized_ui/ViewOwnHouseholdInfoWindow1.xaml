@@ -1,0 +1,21 @@
+<Window x:Class="PRN212_project.finalized_ui.ViewOwnHouseholdInfoWindow1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PRN212_project.finalized_ui"
+        mc:Ignorable="d"
+        Title="ViewOwnHouseholdInfoWindow1" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <DataGrid Name="dg_household_members" AutoGenerateColumns="False" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="MemberID" Width="*" Binding="{Binding MemberID}"/>
+                    <DataGridTextColumn Header="UserID" Width="*" Binding="{Binding UserID}"/>
+                    <DataGridTextColumn Header="Name" Width="*" Binding="{Binding User.FullName}"/>
+                    <DataGridTextColumn Header="Relationship" Width="*" Binding="{Binding Relationship}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>
