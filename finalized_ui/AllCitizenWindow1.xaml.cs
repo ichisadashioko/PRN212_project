@@ -57,8 +57,7 @@ namespace PRN212_project
                 MessageBox.Show("not an authenticated user");
                 return;
             }
-            var window = new NotificationWindow1();
-            window.CurrentUser = CurrentUser;
+            var window = new NotificationWindow1(CurrentUser);
             window.Show();
         }
 

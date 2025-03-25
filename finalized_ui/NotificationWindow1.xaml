@@ -8,8 +8,19 @@
         Title="NotificationWindow1" Height="450" Width="800">
     <Grid>
         <StackPanel>
+            <Label Content="NotificationId"/>
+            <TextBox Name="tb_NotificationId" IsEnabled="False" IsReadOnly="True"/>
+
+            <Label Content="SentDate"/>
+            <DatePicker Name="dp_SentDate" IsEnabled="False"/>
+
+            <Label Content="Message"/>
+            <TextBox Name="tb_Message" IsEnabled="False" IsReadOnly="True"/>
+
+            <Label Content="IsRead"/>
+            <CheckBox Name="cb_is_read" Checked="cb_is_read_Checked"/>
             <Button Content="reload" Name="reload" Click="reload_Click" />
-            <DataGrid Name="datagrid_notification" AutoGenerateColumns="False" >
+            <DataGrid Name="datagrid_notification" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="datagrid_notification_SelectionChanged" SelectionMode="Single">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="NotificationID" Width="*" Binding="{Binding NotificationId}"/>
                     <DataGridTextColumn Header="Message" Width="*" Binding="{Binding Message}"/>
