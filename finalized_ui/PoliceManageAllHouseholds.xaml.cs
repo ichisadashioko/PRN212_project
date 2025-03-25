@@ -57,9 +57,24 @@ namespace PRN212_project.finalized_ui
                 Household household = from_ui();
                 household.HouseholdId = 0;
                 var ctx = new Prn212ProjectContext();
-                ctx.Households.Add(household);
+                var tracking_obj = ctx.Households.Add(household);
                 ctx.SaveChanges();
+
                 MessageBox.Show("succesful");
+                household = tracking_obj.Entity;
+                if (household.HeadOfHouseholdId != null)
+                {
+                    HouseholdMember householdMember = new HouseholdMember()
+                    {
+                        HouseholdId = household.HouseholdId,
+                        Relationship = "Head",
+                        UserId = household.HeadOfHouseholdId
+                    };
+
+                    ctx.HouseholdMembers.Add(householdMember);
+                    ctx.SaveChanges();
+                }
+
                 load_dg();
             }
             catch (Exception ex)
@@ -97,20 +112,20 @@ namespace PRN212_project.finalized_ui
                 var ctx = new Prn212ProjectContext();
 
                 var existing_hh = ctx.Households.Where(hh => hh.HouseholdId == household_id).FirstOrDefault();
-                if(existing_hh == null)
+                if (existing_hh == null)
                 {
                     MessageBox.Show("invalid household");
                     return;
                 }
 
                 var hm_list = ctx.HouseholdMembers.Where(hm => hm.HouseholdId == household_id).ToList();
-                foreach(var hm in hm_list)
+                foreach (var hm in hm_list)
                 {
                     ctx.HouseholdMembers.Remove(hm);
+                    ctx.SaveChanges();
                 }
-
-                ctx.SaveChanges();
-
+                ctx.Dispose();
+                ctx = new Prn212ProjectContext();
                 ctx.Households.Remove(household);
                 ctx.SaveChanges();
 
